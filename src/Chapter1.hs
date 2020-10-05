@@ -492,7 +492,8 @@ Implement a function that returns the last digit of a given number.
 -}
 -- DON'T FORGET TO SPECIFY THE TYPE IN HERE
 lastDigit :: Int -> Int
-lastDigit n = mod n 10
+lastDigit n = mod n' 10
+  where n' = if n < 0 then (-n) else n
 
 
 {- |
@@ -643,10 +644,12 @@ specifying complex expressions.
 
 sumLast2 :: Int -> Int
 sumLast2 n =
-    let digit1 = mod n 10
-        digit2 = mod (div n 10) 10
+    let digit1 = mod n' 10
+        digit2 = mod (div n' 10) 10
     in
       digit1 + digit2
+    where 
+      n' = if n < 0 then (-n) else n
 
 
 {- |
@@ -669,8 +672,10 @@ aren't ready for this boss yet!
 
 firstDigit :: Int -> Int
 firstDigit n
-      | n < 10 = n
-      | otherwise = firstDigit (div n 10)
+      | n' < 10 = n'
+      | otherwise = firstDigit (div n' 10)
+    where 
+      n' = if n < 0 then (-n) else n
 
 
 {-
