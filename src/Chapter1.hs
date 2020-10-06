@@ -644,11 +644,8 @@ specifying complex expressions.
 
 sumLast2 :: Int -> Int
 sumLast2 n =
-    let digit1 = mod n' 10
-        digit2 = mod (div n' 10) 10
-    in
-      digit1 + digit2
-    where 
+    first + second 
+  where 
       n' = if n < 0 then (-n) else n
 
 
