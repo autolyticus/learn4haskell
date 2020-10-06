@@ -646,7 +646,8 @@ sumLast2 :: Int -> Int
 sumLast2 n =
     first + second 
   where 
-      n' = if n < 0 then (-n) else n
+    n' = abs n
+    (first, second) = divMod (mod n' 100) 10
 
 
 {- |
